@@ -143,6 +143,16 @@ public class NamaSiswaController : Controller
         return RedirectToAction(nameof(Index));
     }
 
+    public async Task<IActionResult> Cari()
+    {
+        return View();
+    }
+
+    public async Task<IActionResult> HasilPencarian(string KataKunci)
+    {
+        return View("Index", await _context.NamaSiswaModel.Where(j => j.Nama.Contains(KataKunci)).ToListAsync());
+    }
+
     private bool NamaSiswaModelExists(int? id)
     {
         return _context.NamaSiswaModel.Any(e => e.Id == id);
