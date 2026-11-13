@@ -240,6 +240,9 @@ namespace belajarASPDB.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Usia")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("NamaSiswaModel");

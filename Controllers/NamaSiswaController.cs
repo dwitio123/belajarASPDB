@@ -52,7 +52,7 @@ public class NamaSiswaController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,Nama,Alamat")] NamaSiswaModel namasiswamodel)
+    public async Task<IActionResult> Create([Bind("Id,Nama,Alamat,Usia")] NamaSiswaModel namasiswamodel)
     {
         if (ModelState.IsValid)
         {
@@ -85,7 +85,7 @@ public class NamaSiswaController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int? id, [Bind("Id,Nama,Alamat")] NamaSiswaModel namasiswamodel)
+    public async Task<IActionResult> Edit(int? id, [Bind("Id,Nama,Alamat,Usia")] NamaSiswaModel namasiswamodel)
     {
         if (id != namasiswamodel.Id)
         {
