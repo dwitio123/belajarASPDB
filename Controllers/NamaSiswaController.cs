@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using belajarASPDB.Models;
 using belajarASPDB.Data;
+using Microsoft.AspNetCore.Authorization;
 
 public class NamaSiswaController : Controller
 {
@@ -14,12 +15,14 @@ public class NamaSiswaController : Controller
     }
 
     // GET: NAMASISWAMODELS
+    [Authorize]
     public async Task<IActionResult> Index()    
     {
         return View(await _context.NamaSiswaModel.ToListAsync());
     }
 
     // GET: NAMASISWAMODELS/Details/5
+    [Authorize]
     public async Task<IActionResult> Details(int? id)
     {
         if (id == null)
@@ -38,6 +41,7 @@ public class NamaSiswaController : Controller
     }
 
     // GET: NAMASISWAMODELS/Create
+    [Authorize]
     public IActionResult Create()
     {
         return View();
@@ -60,6 +64,7 @@ public class NamaSiswaController : Controller
     }
 
     // GET: NAMASISWAMODELS/Edit/5
+    [Authorize]
     public async Task<IActionResult> Edit(int? id)
     {
         if (id == null)
@@ -111,6 +116,7 @@ public class NamaSiswaController : Controller
     }
 
     // GET: NAMASISWAMODELS/Delete/5
+    [Authorize]
     public async Task<IActionResult> Delete(int? id)
     {
         if (id == null)
